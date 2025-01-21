@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4c4c2d4d207c6cac698ffb822a526ed1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4c4c2d4d207c6cac698ffb822a526ed1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4c4c2d4d207c6cac698ffb822a526ed1 = L.map(
+                "map_4c4c2d4d207c6cac698ffb822a526ed1",
+                {
+                    center: [20.5937, 78.9629],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_99d64667f7a7d31d213b429529290395 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_99d64667f7a7d31d213b429529290395.addTo(map_4c4c2d4d207c6cac698ffb822a526ed1);
+        
+    
+            var marker_7d6615ecd65b52e0b17f91e8eb08603e = L.marker(
+                [28.6139, 77.209],
+                {
+}
+            ).addTo(map_4c4c2d4d207c6cac698ffb822a526ed1);
+        
+    
+            var icon_81cee3e19f382990c492fbf01486d3ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7d6615ecd65b52e0b17f91e8eb08603e.setIcon(icon_81cee3e19f382990c492fbf01486d3ce);
+        
+    
+        var popup_596808bbce8967fbe115dbb3a36d0d25 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d28f564c477c311f1d66448d788f0bd = $(`<div id="html_5d28f564c477c311f1d66448d788f0bd" style="width: 100.0%; height: 100.0%;">Delhi:5652 accidents</div>`)[0];
+                popup_596808bbce8967fbe115dbb3a36d0d25.setContent(html_5d28f564c477c311f1d66448d788f0bd);
+            
+        
+
+        marker_7d6615ecd65b52e0b17f91e8eb08603e.bindPopup(popup_596808bbce8967fbe115dbb3a36d0d25)
+        ;
+
+        
+    
+    
+            var marker_21eaf9ab1e3513743f2cf1a0da385931 = L.marker(
+                [19.076, 72.8777],
+                {
+}
+            ).addTo(map_4c4c2d4d207c6cac698ffb822a526ed1);
+        
+    
+            var icon_db2dca2c702e005cb238ab3e7a78754f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_21eaf9ab1e3513743f2cf1a0da385931.setIcon(icon_db2dca2c702e005cb238ab3e7a78754f);
+        
+    
+        var popup_b1fcca918289e5516097fbb9785e534b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1c270f461e1bdf8cdb9b3093e6c6ac7 = $(`<div id="html_e1c270f461e1bdf8cdb9b3093e6c6ac7" style="width: 100.0%; height: 100.0%;">Mumbai:3000 accidents</div>`)[0];
+                popup_b1fcca918289e5516097fbb9785e534b.setContent(html_e1c270f461e1bdf8cdb9b3093e6c6ac7);
+            
+        
+
+        marker_21eaf9ab1e3513743f2cf1a0da385931.bindPopup(popup_b1fcca918289e5516097fbb9785e534b)
+        ;
+
+        
+    
+    
+            var marker_dac34b6ca99e3d1c70f5a923de52c586 = L.marker(
+                [12.9716, 77.5946],
+                {
+}
+            ).addTo(map_4c4c2d4d207c6cac698ffb822a526ed1);
+        
+    
+            var icon_f92cfcd1ab7873a8a84b521164a3f53f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_dac34b6ca99e3d1c70f5a923de52c586.setIcon(icon_f92cfcd1ab7873a8a84b521164a3f53f);
+        
+    
+        var popup_02cffe022256c8e04d31de8e80921d42 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05c1b8a3d23e36ad7f650992fa212ff1 = $(`<div id="html_05c1b8a3d23e36ad7f650992fa212ff1" style="width: 100.0%; height: 100.0%;">Bengaluru:3822 accidents</div>`)[0];
+                popup_02cffe022256c8e04d31de8e80921d42.setContent(html_05c1b8a3d23e36ad7f650992fa212ff1);
+            
+        
+
+        marker_dac34b6ca99e3d1c70f5a923de52c586.bindPopup(popup_02cffe022256c8e04d31de8e80921d42)
+        ;
+
+        
+    
+    
+            var marker_d752b1c0db14db0ef98b86faa2845fa3 = L.marker(
+                [13.0827, 80.2707],
+                {
+}
+            ).addTo(map_4c4c2d4d207c6cac698ffb822a526ed1);
+        
+    
+            var icon_42175b5fd7cb6c69c7d92c027dd406ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d752b1c0db14db0ef98b86faa2845fa3.setIcon(icon_42175b5fd7cb6c69c7d92c027dd406ae);
+        
+    
+        var popup_e8dd0aeacf9439dbae9ffd27459e2253 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b8ffcc9cc7ca11d69a189862c305bad = $(`<div id="html_8b8ffcc9cc7ca11d69a189862c305bad" style="width: 100.0%; height: 100.0%;">Chennai:3452 accidents</div>`)[0];
+                popup_e8dd0aeacf9439dbae9ffd27459e2253.setContent(html_8b8ffcc9cc7ca11d69a189862c305bad);
+            
+        
+
+        marker_d752b1c0db14db0ef98b86faa2845fa3.bindPopup(popup_e8dd0aeacf9439dbae9ffd27459e2253)
+        ;
+
+        
+    
+    
+            var marker_5363c14fb7c6c81a9bb038f273db8aad = L.marker(
+                [22.5726, 88.3639],
+                {
+}
+            ).addTo(map_4c4c2d4d207c6cac698ffb822a526ed1);
+        
+    
+            var icon_31dbe108f7b9c97c26dd65d1d57f1db6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5363c14fb7c6c81a9bb038f273db8aad.setIcon(icon_31dbe108f7b9c97c26dd65d1d57f1db6);
+        
+    
+        var popup_9976a9507fd921c059dc48c003885f24 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0b1bc85d8df6fd61d79c310d6eb7bce9 = $(`<div id="html_0b1bc85d8df6fd61d79c310d6eb7bce9" style="width: 100.0%; height: 100.0%;">Kolkata:2500 accidents</div>`)[0];
+                popup_9976a9507fd921c059dc48c003885f24.setContent(html_0b1bc85d8df6fd61d79c310d6eb7bce9);
+            
+        
+
+        marker_5363c14fb7c6c81a9bb038f273db8aad.bindPopup(popup_9976a9507fd921c059dc48c003885f24)
+        ;
+
+        
+    
+</script>
+</html>

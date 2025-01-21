@@ -1,4 +1,4 @@
-citiy,latitude,longitude,accident_count
+city,latitude,longitude,accident_count
 Delhi,28.6139,77.2090,5652
 Mumbai,19.0760,72.8777,3000
 Bengaluru,12.9716,77.5946,3822
