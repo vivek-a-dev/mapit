@@ -14,4 +14,4 @@ for _, row in data.iterrows():
         icon = folium.Icon(color=get_marker_color(row['accident_count']))
     ).add_to(city_map)
     
-    city_map.save(f"{row['city']}_accident_map.html")
+city_map.save(f"{row['city']}_accident_map.html")
