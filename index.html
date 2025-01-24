@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #121212;
+      color: white;
+    }
+    #map {
+      width: 100%;
+      height: 80vh;
+    }
+    .container {
+      padding: 20px;
+      background: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      margin: 20px;
+    }
+    h1 {
+      margin-top: 20px;
+      color: #e0e0e0;
+    }
+    .report-info {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Map</h1>
+  
+  <div class="container">
+    <div id="map"></div>
+    <div id="report" class="report-info">Click on a route marker to see details.</div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map and set its view to Bangalore
+    const map = L.map('map').setView([12.9716, 77.5946], 13); // Coordinates for Bangalore, India
+
+    // Add OpenStreetMap tiles with dark theme
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      minZoom: 12,
+    }).addTo(map);
+
+    // Expanded route data with coordinates, accident counts, and safety levels
+    const routes = [
+      {
+        id: 'route1',
+        name: 'Route 1',
+        coords: [12.9716, 77.5946], // Starting point
+        path: [
+          [12.9716, 77.5946], // Start point
+          [12.9654, 77.6031],
+          [12.9572, 77.6150]
+        ],
+        accidents: 2,
+        safetyLevel: 'Moderate'
+      },
+      {
+        id: 'route2',
+        name: 'Route 2',
+        coords: [12.9352, 77.6245], // Starting point
+        path: [
+          [12.9352, 77.6245],
+          [12.9246, 77.6160],
+          [12.9184, 77.6102]
+        ],
+        accidents: 1,
+        safetyLevel: 'Safe'
+      },
+      {
+        id: 'route3',
+        name: 'Route 3',
+        coords: [12.9279, 77.6271], // Starting point
+        path: [
+          [12.9279, 77.6271],
+          [12.9184, 77.6320],
+          [12.9070, 77.6255]
+        ],
+        accidents: 0,
+        safetyLevel: 'Safest'
+      },
+      {
+        id: 'route4',
+        name: 'Route 4',
+        coords: [12.9714, 77.6147], // Starting point
+        path: [
+          [12.9714, 77.6147],
+          [12.9605, 77.6172],
+          [12.9520, 77.6100]
+        ],
+        accidents: 3,
+        safetyLevel: 'Risky'
+      },
+      {
+        id: 'route5',
+        name: 'Route 5',
+        coords: [12.9634, 77.6101], // Starting point
+        path: [
+          [12.9634, 77.6101],
+          [12.9537, 77.6083],
+          [12.9452, 77.6009]
+        ],
+        accidents: 0,
+        safetyLevel: 'Safe'
+      }
+    ];
+
+    // Define the destination location (set to red)
+    const destination = L.marker([12.9716, 77.6101], {
+      icon: L.icon({
+        iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Red_circle.svg/600px-Red_circle.svg.png',
+        iconSize: [30, 30], // Size of the icon
+        iconAnchor: [15, 15] // Anchor the icon at the center
+      })
+    }).addTo(map);
+    destination.bindPopup("<b>Destination</b><br>Choose the best route.");
+
+    // Function to determine polyline color based on safety level
+    function getRouteColor(safetyLevel) {
+      switch (safetyLevel) {
+        case 'Safest':
+          return 'green';
+        case 'Safe':
+          return 'blue';
+        case 'Moderate':
+          return 'yellow';
+        case 'Risky':
+          return 'red';
+        default:
+          return 'gray';
+      }
+    }
+
+    // Add markers and polylines for each route
+    routes.forEach((route) => {
+      // Add the route marker
+      const marker = L.marker(route.coords).addTo(map);
+      marker.bindPopup(`<b>${route.name}</b><br>Accidents: ${route.accidents}<br>Safety: ${route.safetyLevel}`);
+
+      // Draw the polyline for each route (towards destination)
+      const routePolyline = L.polyline([...route.path, [12.9716, 77.6101]], {
+        color: getRouteColor(route.safetyLevel),
+        weight: 5,
+        opacity: 0.7,
+      }).addTo(map);
+
+      // Add event listener to update report information when marker is clicked
+      marker.on('click', function () {
+        document.getElementById("report").innerHTML = `Route: ${route.name}<br>Accidents: ${route.accidents}<br>Safety Level: ${route.safetyLevel}`;
+      });
+    });
+  </script>
+</body>
+</html>
+
