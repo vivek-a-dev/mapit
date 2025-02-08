@@ -3,61 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotspotter - About</title>
+    <title>HotSpotter - About</title>
     <style>
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: #121212;
-            color: #ffffff;
-            text-align: center;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
+            overflow: hidden;
         }
         .container {
-            max-width: 800px;
-            margin: auto;
+            max-width: 1200px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .image-section, .content-section {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+        .image-section {
+            background: url('https://via.placeholder.com/600x600') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .image-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,0,0,0.5), rgba(0,0,0,0.9));
+            animation: rotate 10s linear infinite;
+        }
+        .content-section {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: slideIn 1s ease-out;
         }
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #ff3b3b;
+            margin-bottom: 20px;
+            color: #e63946;
+            animation: textPop 1s ease-in-out;
         }
         p {
-            font-size: 1.2rem;
-            line-height: 1.6;
+            font-size: 1.1rem;
             margin-bottom: 20px;
-            color: #d3d3d3;
+            animation: fadeInUp 1s ease-in-out;
         }
         .highlight {
             font-weight: bold;
-            color: #ff3b3b;
+            color: #e63946;
         }
         .cta-button {
             display: inline-block;
-            background-color: #ff3b3b;
+            background-color: #e63946;
             color: white;
-            padding: 12px 20px;
+            padding: 15px 30px;
             font-size: 1.2rem;
             border-radius: 5px;
             text-decoration: none;
-            transition: 0.3s;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            align-self: flex-start;
+            animation: fadeInUp 1s ease-in-out;
         }
         .cta-button:hover {
-            background-color: #e52b2b;
+            background-color: #d62828;
+            transform: translateY(-5px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes textPop {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .image-section {
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Hotspotter</h1>
-        <p>Hotspotter is a cutting-edge platform designed to <span class="highlight">track accident reports</span> and <span class="highlight">identify high-risk areas</span> using heatmaps.</p>
-        <p>With real-time data collection and visualization, our tool helps in improving road safety by analyzing accident-prone zones.</p>
-        <p>Whether you're a city planner, a concerned citizen, or part of the emergency response team, Hotspotter provides <span class="highlight">actionable insights</span> to prevent future accidents.</p>
-        <a href="#" class="cta-button">Get Started</a>
+        <div class="image-section"></div>
+        <div class="content-section">
+            <h1>HotSpotter</h1>
+            <p>HotSpotter is a cutting-edge platform designed to <span class="highlight">track accident reports</span> and <span class="highlight">identify high-risk areas</span> using heatmaps.</p>
+            <p>With real-time data collection and visualization, our tool helps in improving road safety by analyzing accident-prone zones.</p>
+            <p>Whether you're a city planner, a concerned citizen, or part of the emergency response team, HotSpotter provides <span class="highlight">actionable insights</span> to prevent future accidents.</p>
+            <a href="https://vivek-a-dev.github.io/hotSpotter/" class="cta-button">Get Started</a>
+        </div>
     </div>
 </body>
 </html>
